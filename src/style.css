@@ -64,7 +64,3 @@ button[type="submit"] {
   color: white;
   cursor: pointer;
 }
-
-canvas {
-  margin: 0 auto;
-}
