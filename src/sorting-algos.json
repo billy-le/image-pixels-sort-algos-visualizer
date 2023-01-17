@@ -1,0 +1,142 @@
+[
+  {
+    "name": "selection sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "bubble sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "insertion sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "merge sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "quick sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "heap sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "counting sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "radix sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "bucket sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "bingo sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "shellsort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "timsort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "comb sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "pigeonhole sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "cycle sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "cocktail sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "strand sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "bitonic sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "pancake sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "bogo sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "gnome sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "sleep sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "structure sorting",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "stooge sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "tag sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "tree sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "odd-even sort",
+    "link": "",
+    "disabled": true
+  },
+  {
+    "name": "3-way merge sort",
+    "link": "",
+    "disabled": true
+  }
+]

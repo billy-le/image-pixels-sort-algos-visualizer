@@ -1,0 +1,66 @@
+:root {
+  --header-height: 60px;
+  --header-bg-color: #bababa;
+
+  --form-element-height: 32px;
+  --form-element-padding: 4px 8px;
+  --form-element-border-radius: 4px;
+  --form-element-bg-color: #fafafa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  height: var(--header-height);
+  background-color: var(--header-bg-color);
+  display: grid;
+  place-items: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+select {
+  height: var(--form-element-height);
+  border: none;
+  border-radius: var(--form-element-border-radius);
+  padding: var(--form-element-padding);
+  background-color: var(--form-element-bg-color);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label[for="image"] {
+  background-color: var(--form-element-bg-color);
+  height: var(--form-element-height);
+  padding: var(--form-element-padding);
+  border-radius: var(--form-element-border-radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+label[for="image"] svg {
+  height: 20px;
+  width: 20px;
+}
+
+button[type="submit"] {
+  height: var(--form-element-height);
+  width: 64px;
+  border: none;
+  border-radius: var(--form-element-border-radius);
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
