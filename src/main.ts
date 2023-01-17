@@ -22,8 +22,8 @@ sortingAlgos.forEach((algo) => {
 
 /*
  * dictionary that is already sorted when we insert a new perceived lightness
- * but we want to use a visualizer to see how different sorting algos work 
- */ 
+ * but we want to use a visualizer to see how different sorting algos work
+ */
 const percievedLightness: { [key: number]: number[] } = {};
 
 class Particle {
@@ -42,6 +42,10 @@ class Particle {
     this.originY = y;
     this.color = color;
     this.lStar = lStar;
+  }
+  draw() {
+    this.context.fillStyle = this.color;
+    this.context.fillRect(this.x, this.y, 1, 1);
   }
 }
 
@@ -75,11 +79,13 @@ form.addEventListener("submit", async (e) => {
 
   // const script = await import(`./module-${sortAlgo}`).then((res) => res.default);
 
-  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  for (let y = 0; y < canvas.height; y += 3) {
-    for (let x = 0; x < canvas.width; x += 3) {
-      const index = y * canvas.width + x + 3;
+  for (let y = 0; y < canvas.height; y++) {
+    for (let x = 0; x < canvas.width; x++) {
+      const index = (x + y * imageData.width) * 4;
 
       const red = data[index];
       const green = data[index + 1];
@@ -103,6 +109,10 @@ form.addEventListener("submit", async (e) => {
         particles.push(new Particle(ctx, x, y, `rgb(${red}, ${green}, ${blue})`, lStar));
       }
     }
+  }
+
+  for (const particle of particles) {
+    particle.draw();
   }
 });
 
