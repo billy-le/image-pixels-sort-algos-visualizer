@@ -2,8 +2,8 @@
   {
     "name": "selection sort",
     "link": "",
-    "disabled": true,
-    "script": "selection-sort.js"
+    "disabled": false,
+    "script": "selection-sort"
   },
   {
     "name": "bubble sort",
