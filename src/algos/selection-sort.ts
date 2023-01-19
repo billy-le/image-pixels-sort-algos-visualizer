@@ -1,5 +1,5 @@
-import { Particle } from "./particle";
-import { sleep } from "./utils";
+import { Particle } from "../particle";
+import { sleep } from "../utils";
 
 export default async function selectionSort(particles: Particle[]) {
   window.addEventListener("algo-kill", () => {

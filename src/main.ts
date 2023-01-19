@@ -39,7 +39,7 @@ form.addEventListener("submit", async (e) => {
   submit.disabled = running;
   const formData = new FormData(form);
   const algoFileName = formData.get("sort")!;
-  const sortAlgo = await import(`./module-${algoFileName}.ts`).then((res) => res.default);
+  const sortAlgo = await import(`./algos/${algoFileName}.ts`).then((res) => res.default);
 
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const data = imageData.data;
