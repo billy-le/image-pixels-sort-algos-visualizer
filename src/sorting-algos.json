@@ -8,8 +8,8 @@
   {
     "name": "bubble sort",
     "link": "",
-    "disabled": true,
-    "script": ""
+    "disabled": false,
+    "script": "bubble-sort"
   },
   {
     "name": "insertion sort",
