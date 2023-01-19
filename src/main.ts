@@ -12,13 +12,13 @@ const percievedLightness: { [key: number]: number[] } = {};
 
 let imageSrc: string | null = null;
 let particles: Particle[] = [];
-const size = 20;
+const size = 40;
 const form = document.querySelector("form")!;
 const select = document.querySelector("select")!;
 const imageInput = document.querySelector('input[type="file"]')!;
 const canvas = document.querySelector("canvas")!;
-canvas.width = 200;
-canvas.height = 200;
+canvas.width = 400;
+canvas.height = 400;
 const ctx = canvas.getContext("2d")!;
 ctx.imageSmoothingEnabled = false;
 
@@ -34,7 +34,6 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = new FormData(e.target as HTMLFormElement);
   const algoFileName = formData.get("sort")!;
-
   const sortAlgo = await import(`./module-${algoFileName}.ts`).then((res) => res.default);
 
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
