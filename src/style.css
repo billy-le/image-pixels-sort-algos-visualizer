@@ -65,6 +65,11 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+button[type="submit"][disabled=""] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 canvas {
   position: absolute;
   top: 50%;

@@ -21,6 +21,7 @@ export default async function selectionSort(particles: Particle[]) {
         index = i;
       }
       await sleep(0);
+
       particle.draw();
     }
   }

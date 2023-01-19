@@ -98,7 +98,7 @@ function fitImageToCanvas(imageSrc: string) {
 }
 
 function emitKillEvent() {
-  window.dispatchEvent(new Event("kill"));
+  window.dispatchEvent(new CustomEvent("algo-kill"));
   running = false;
   submit.disabled = running;
 }
