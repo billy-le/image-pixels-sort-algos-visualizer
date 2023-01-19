@@ -10,10 +10,12 @@ import { sRGBtoLin, YtoLstar } from "./utils";
  */
 const percievedLightness: { [key: number]: number[] } = {};
 
+let running = false;
 let imageSrc: string | null = null;
 let particles: Particle[] = [];
 const size = 40;
 const form = document.querySelector("form")!;
+const submit = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 const select = document.querySelector("select")!;
 const imageInput = document.querySelector('input[type="file"]')!;
 const canvas = document.querySelector("canvas")!;
@@ -32,7 +34,10 @@ sortingAlgos.forEach((algo) => {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const formData = new FormData(e.target as HTMLFormElement);
+  if (running) return;
+  running = true;
+  submit.disabled = running;
+  const formData = new FormData(form);
   const algoFileName = formData.get("sort")!;
   const sortAlgo = await import(`./module-${algoFileName}.ts`).then((res) => res.default);
 
@@ -92,7 +97,14 @@ function fitImageToCanvas(imageSrc: string) {
   });
 }
 
+function emitKillEvent() {
+  window.dispatchEvent(new Event("kill"));
+  running = false;
+  submit.disabled = running;
+}
+
 imageInput.addEventListener("change", (e) => {
+  emitKillEvent();
   particles = [];
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   const [file] = Array.from((e.target as HTMLInputElement).files!);
