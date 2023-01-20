@@ -32,6 +32,11 @@ export class Particle {
     this.context.fillStyle = this.color;
     this.context.fillRect(this._x, this._y, this.size, this.size);
   }
+  cursor() {
+    const halfSize = this.size / 2;
+    this.context.fillStyle = "red";
+    this.context.fillRect(this._x + halfSize / 2, this._y + halfSize / 2, halfSize, halfSize);
+  }
   remove() {
     this.context.clearRect(this._x, this._y, this.size, this.size);
   }

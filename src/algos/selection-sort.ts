@@ -14,16 +14,14 @@ export default async function selectionSort(particles: Particle[]) {
 
   for (let i = 0; i < particlesLen; i++) {
     const particle = particles[i];
-    if (particle) {
-      particle.remove();
-      if (!lightestParticle || particle.lStar < lightestParticle.lStar) {
-        lightestParticle = particle;
-        index = i;
-      }
-      await sleep(0);
-
-      particle.draw();
+    particle?.cursor();
+    if (!lightestParticle || particle?.lStar < lightestParticle?.lStar) {
+      lightestParticle = particle;
+      index = i;
     }
+    await sleep(0);
+
+    particle?.draw();
   }
 
   const particle = particles[0];

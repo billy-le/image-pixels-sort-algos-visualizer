@@ -14,8 +14,8 @@
   {
     "name": "insertion sort",
     "link": "",
-    "disabled": true,
-    "script": ""
+    "disabled": false,
+    "script": "insertion-sort"
   },
   {
     "name": "merge sort",
