@@ -1,5 +1,5 @@
-import { Particle } from "../particle";
-import { sleep } from "../utils";
+import type { Particle } from "../particle";
+import { sleep, swapXY } from "../utils";
 
 export default async function bubbleSort(particles: Particle[]) {
   window.addEventListener("algo-kill", () => {
@@ -20,14 +20,9 @@ export default async function bubbleSort(particles: Particle[]) {
     if (nextParticle?.lStar < particle?.lStar) {
       particles[i] = nextParticle;
       particles[i + 1] = particle;
-      const x = particle.x;
-      const y = particle.y;
 
-      particle.x = nextParticle.x;
-      particle.y = nextParticle.y;
-      nextParticle.x = x;
-      nextParticle.y = y;
-
+      swapXY(particle, nextParticle)
+    
       sortCount++;
     }
     await sleep(0);

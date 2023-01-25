@@ -1,3 +1,14 @@
+import type { Particle } from "./particle";
+
+export function swapXY(left: Particle, right: Particle) {
+  const x = left.x;
+  const y = left.y;
+  left.x = right.x;
+  left.y = right.y;
+  right.x = x;
+  right.y = y;
+}
+
 export function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }

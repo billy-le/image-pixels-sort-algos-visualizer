@@ -1,5 +1,5 @@
-import { Particle } from "../particle";
-import { sleep } from "../utils";
+import type { Particle } from "../particle";
+import { sleep, swapXY } from "../utils";
 
 export default async function selectionSort(particles: Particle[]) {
   window.addEventListener("algo-kill", () => {
@@ -29,14 +29,7 @@ export default async function selectionSort(particles: Particle[]) {
     particles[0] = lightestParticle!;
     particles[index] = particle;
 
-    const x = particle.x;
-    const y = particle.y;
-
-    particle.x = lightestParticle!.x;
-    particle.y = lightestParticle!.y;
-
-    lightestParticle!.x = x;
-    lightestParticle!.y = y;
+    swapXY(particle, lightestParticle!)
 
     particle.draw();
     lightestParticle!.draw();

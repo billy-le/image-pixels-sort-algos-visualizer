@@ -1,5 +1,5 @@
-import { Particle } from "../particle";
-import { sleep } from "../utils";
+import type { Particle } from "../particle";
+import { sleep, swapXY } from "../utils";
 
 export default async function insertionSort(particles: Particle[]) {
   window.addEventListener("algo-kill", () => {
@@ -21,12 +21,7 @@ export default async function insertionSort(particles: Particle[]) {
       particles[i] = nextParticle;
       particles[i + 1] = particle;
 
-      const x = particle.x;
-      const y = particle.y;
-      particle.x = nextParticle.x;
-      particle.y = nextParticle.y;
-      nextParticle.x = x;
-      nextParticle.y = y;
+      swapXY(particle, nextParticle)
 
       sortCount++;
       i = i > 0 ? i - 1 : i;
